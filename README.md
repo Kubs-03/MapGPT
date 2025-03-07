@@ -1,5 +1,5 @@
 # MapGPT
-This is a project is interactive search query based on AI. Heping the users to solve their geographic queries. Giving the eperience to interact and explore the world through this application. 
+This is a project is interactive search query based on AI. Heping the users to solve their geographic queries. Giving the experience to interact and explore the world through this application. 
 <h2>Tech tack</h2>
 <ul>
   <li>Google gemini API </li>
