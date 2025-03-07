@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Powered Map Search</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        #map {
+            height: 500px;
+            width: 80%;
+            margin: auto;
+        }
+
+        #searchContainer {
+            margin: 20px;
+            position: relative;
+            display: inline-block;
+            width: 50%;
+            font: 16px;
+        }
+
+        #searchBar {
+            padding: 10px;
+            width: 50%;
+            font-size: 20px;
+            border: 1px solid;
+            border-radius: 10px;
+        }
+
+        #suggestions {
+            position: absolute;
+            top: 50px;
+            left: 0;
+            background: white;
+            border: 1px solid #ccc;
+            width: 100%;
+            max-height: 150px;
+            overflow-y: auto;
+            display: none;
+            text-align: center;
+            margin: auto;
+            z-index: 1000;
+        }
+
+        .suggestion-item {
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .suggestion-item:hover {
+            background: lightgray;
+        }
+
+        #answer {
+            margin: 40px;
+            font-size: 18px;
+            /* background-color: rgb(209, 209, 209); */
+        }
+
+        button {
+            font-size: 16px;
+            padding: 10px;
+            margin: 5px;
+            border-style: hidden;
+            border-radius: 10px;
+        }
+
+        button:hover {
+            background-color: rgb(68, 158, 68);
+            color: white;
+        }
+
+        /* Listening Indicator */
+        #listeningIndicator {
+            color: red;
+            font-size: 16px;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>MapGPT</h1>
+    <div id="searchContainer">
+        <input type="text" id="searchBar" placeholder="Search a country or ask a question..."
+            oninput="showSuggestions()">
+        <button onclick="searchCountry()">Search</button>
+        <button id="speakButton" onclick="startSpeechRecognition()">🎤 Speak</button>
+        <div id="suggestions"></div>
+        <!-- <div id="listeningIndicator">🎙️ Listening...</div> -->
+    </div>
+    <div id="map"></div>
+    <div id="answer"></div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
